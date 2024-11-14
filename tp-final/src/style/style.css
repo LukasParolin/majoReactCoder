@@ -7,8 +7,8 @@
 }
 
 /* Estilos del header (NavBar) */
-header {
-  background-color: #305CAA; /* Color principal */
+.navBar {
+  background-color: #305CAA;
   display: flex;
   justify-content: space-between;
   align-items: center;

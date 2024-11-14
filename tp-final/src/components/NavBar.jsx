@@ -5,7 +5,7 @@ import '../style/style.css';
 
 function NavBar() {
   return (
-    <nav style={{ backgroundColor: '#colorDeMajo', padding: '10px' }}>
+    <nav className='navBar' >
       <Logo />
       <ul style={{ display: 'flex', listStyle: 'none' }}>
         <li style={{ margin: '0 15px' }}>Mermeladas Gourmet</li>
