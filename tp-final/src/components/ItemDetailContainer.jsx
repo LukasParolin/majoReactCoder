@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Item from "./Item";
-import "../style/style.css";
 
 const mockData = [
   {
@@ -30,34 +28,30 @@ const mockData = [
   },
 ];
 
-function ItemListContainer({ greeting }) {
-  const { categoryId } = useParams();
-  const [items, setItems] = useState([]);
+function ItemDetailContainer() {
+  const { productId } = useParams();
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    const fetchData = () => {
-      const filteredData = categoryId
-        ? mockData.filter((item) => item.category === categoryId)
-        : mockData;
-      setTimeout(() => setItems(filteredData), 500);
+    const fetchProduct = () => {
+      const product = mockData.find((item) => item.id === parseInt(productId));
+      setTimeout(() => setProduct(product), 500);
     };
-    fetchData();
-  }, [categoryId]);
+    fetchProduct();
+  }, [productId]);
 
   return (
     <div>
-      <h2>{greeting}</h2>
-      <section>
-        {items.map((item) => (
-          <Item
-            key={item.id}
-            title={item.title}
-            description={item.description}
-          />
-        ))}
-      </section>
+      {product ? (
+        <div>
+          <h2>{product.title}</h2>
+          <p>{product.description}</p>
+        </div>
+      ) : (
+        <p>Cargando...</p>
+      )}
     </div>
   );
 }
 
-export default ItemListContainer;
+export default ItemDetailContainer;
