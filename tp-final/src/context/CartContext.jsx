@@ -5,8 +5,6 @@ export const CartContext = createContext();
 const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  //   const existeEnElCarrito = ( product )=>{}
-
   const addToCart = (product) => {
     setCart([...cart, product]);
   };
@@ -15,7 +13,6 @@ const CartContextProvider = ({ children }) => {
   };
 
   const deleteById = (id) => {
-    // filter ---> [] --> [] con los elementos que cumplan la condicion
     let nuevoArray = cart.filter((elemento) => elemento.id !== id);
     setCart(nuevoArray);
   };
@@ -42,16 +39,3 @@ const CartContextProvider = ({ children }) => {
 };
 
 export default CartContextProvider;
-
-{
-  /* <ItemDetail title sotck={} x={} /> 
-<Checkout title sotck={} x={} / > */
-}
-
-{
-  /* <CartContextProvider>
-
-
-
-</CartContextProvider> */
-}

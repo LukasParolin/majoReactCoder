@@ -5,7 +5,7 @@ import CardItem from "../../common/cardItem/CardItem";
 import { useParams } from "react-router-dom";
 
 export const ItemListContainer = () => {
-  const { name } = useParams(); // {}
+  const { name } = useParams();
 
   const [items, setItems] = useState([]);
 
@@ -33,13 +33,9 @@ export const ItemListContainer = () => {
       });
   }, [name]);
 
-  // if (items.length === 0) {
-  //   return <h1>Cargando......</h1>;
-  // }
-
   return (
     <div>
-      <h2>Esta es mi tienda</h2>
+      <h2>Nuestros Productos</h2>
       {items.length === 0 ? (
         <h1>Cargando......</h1>
       ) : (
@@ -56,8 +52,6 @@ export const ItemListContainer = () => {
           })}
         </div>
       )}
-
-      <h3>Otra cosa</h3>
     </div>
   );
 };
