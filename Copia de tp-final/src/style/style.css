@@ -8,11 +8,34 @@
 
 /* Estilos del header (NavBar) */
 .navBar {
-  background-color: #305CAA;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  background-color: #333;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.logo h1 {
+  margin: 0;
 }
 
 header nav ul {
@@ -43,13 +66,13 @@ header img {
 }
 
 .item-container h2 {
-  color: #305CAA; /* Título en color principal */
+  color: #305caa; /* Título en color principal */
   font-size: 36px;
   margin-bottom: 20px;
 }
 
 .item-container h3 {
-  color: #305CAA;
+  color: #305caa;
   font-size: 28px;
   margin-top: 20px;
 }
@@ -62,13 +85,13 @@ header img {
 
 /* Estilo del widget de carrito */
 .cart-widget {
+  font-size: 1.5rem;
   color: white;
-  font-size: 24px;
 }
 
 /* Estilos del footer (opcional si lo agregas) */
 footer {
-  background-color: #305CAA;
+  background-color: #305caa;
   padding: 10px;
   text-align: center;
   color: white;

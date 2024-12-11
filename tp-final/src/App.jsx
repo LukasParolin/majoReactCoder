@@ -1,17 +1,25 @@
-import React from "react";
+import { Navbar } from "./components/layout/navbar/Navbar";
+import Cart from "./components/pages/cart/Cart";
+import Checkout from "./components/pages/checkout/Checkout";
+import ItemDetail from "./components/pages/itemDetail/ItemDetail";
+import { ItemListContainer } from "./components/pages/itemList/ItemListContainer";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ItemListContainer from "./components/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetailContainer";
+import CartContextProvider from "./context/CartContext";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<ItemListContainer greeting="Bienvenido a nuestra tienda" />} />
-        <Route path="/category/:categoryId" element={<ItemListContainer />} />
-        <Route path="/product/:productId" element={<ItemDetailContainer />} />
-        <Route path="*" element={<h2>Página no encontrada</h2>} />
-      </Routes>
+      <CartContextProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/category/:name" element={<ItemListContainer />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/detail/:id" element={<ItemDetail />} />
+          <Route path="/checkout" element={<Checkout />} />
+        </Routes>
+      </CartContextProvider>
     </BrowserRouter>
   );
 }
