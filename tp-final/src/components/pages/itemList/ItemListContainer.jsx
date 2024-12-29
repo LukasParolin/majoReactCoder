@@ -51,7 +51,12 @@ export const ItemListContainer = () => {
         }}
       >
         {items.map((elemento) => {
-          return <CardItem key={elemento.id} elemento={elemento} />;
+          return (
+            <CardItem
+              key={`${elemento.id}-${elemento.titulo}`}
+              elemento={elemento}
+            />
+          );
         })}
       </div>
 
